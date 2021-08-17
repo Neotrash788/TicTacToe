@@ -108,13 +108,20 @@ def play_game():
 
     if check_for_winner():
         run = False
+        display_board()
         print(f"{winner} won!")
     else:
         if check_if_game_over():
             run = False
+            display_board()
             print("Tie")
 
 
 while run:
-    play_game()
+    try:
+        play_game()
+    except IndexError:
+        print('Please type numbers 1-9')
+    except ValueError:
+        print('Please type numbers 1-9')
 input('Press Enter To End')
