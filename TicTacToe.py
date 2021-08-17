@@ -106,13 +106,15 @@ def play_game():
     display_board()
     handle_turn(int(input(f"\n{turn}'s turn -> "))-1)
 
-    if check_if_game_over():
-        run = False
-        print("Tie")
     if check_for_winner():
         run = False
         print(f"{winner} won!")
+    else:
+        if check_if_game_over():
+            run = False
+            print("Tie")
 
 
 while run:
     play_game()
+input('Press Enter To End')
