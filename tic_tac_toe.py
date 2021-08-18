@@ -154,8 +154,8 @@ def run_game():
 run_game()
 
 
-play_again = input("Play again? ").lower()
-if play_again in ('y', 'yes', 'ye', 'yup'):
+play_again = input("Play again? ")[:2].lower()
+if play_again in ('y', 'ye', 'yu'):
     run = True
     board = board = [
         "-", "-", "-",
@@ -165,3 +165,4 @@ if play_again in ('y', 'yes', 'ye', 'yup'):
     run_game()
 else:
     quit()
+
