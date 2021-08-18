@@ -21,4 +21,4 @@ Board layout is as follows:
 
 ## Usage
 
-To play this game, clone the repository and run [TicTacToe.py](TicTacToe.py)
+To play this game, clone the repository and run [tic_tac_toe.py](tic_tac_toe.py)
