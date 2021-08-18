@@ -22,6 +22,7 @@ def display_board():
     print(' | '.join(board[3:6]))
     print('--+---+--')
     print(' | '.join(board[6:9]))
+    print('---------')
 
 # Changes turn
 
@@ -117,11 +118,27 @@ def play_game():
             print("Tie")
 
 
-while run:
-    try:
-        play_game()
-    except IndexError:
-        print('Please type numbers 1-9')
-    except ValueError:
-        print('Please type numbers 1-9')
-input('Press Enter To End')
+def run_game():
+    while run:
+        try:
+            play_game()
+        except IndexError:
+            print('\nNumber must be between 1-9\n')
+        except ValueError:
+            print('\nInput must be an integer between 1-9\n')
+
+
+run_game()
+
+
+play_again = input("Play again? ").lower()
+if play_again in ('y', 'yes', 'ye', 'yup'):
+    run = True
+    board = board = [
+        "-", "-", "-",
+        "-", "-", "-",
+        "-", "-", "-"
+    ]
+    run_game()
+else:
+    quit()
